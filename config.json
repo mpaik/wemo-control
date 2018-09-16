@@ -1,0 +1,33 @@
+{
+    "fileLogLevel": "silly",
+    "consoleLogLevel": "silly",
+    "logFile": "wemo-control.log",
+    "triggers": {
+        "Coffeemaker": {
+            "fromState": "on",
+            "toState": "standby",
+            "webhookUrl": "https://192.168.0.100:20000/broadcast",
+            "webhookMethod": "POST",
+            "webhookContentType": "application/json",
+            "webhookRequestBody": {
+                "command": "coffee is ready",
+                "delayInSecs": 180,
+                "user": "public",
+                "relayKey": "r3pl4ac3th153x4mpl3n0nc3"
+            }
+        },
+        "Kettle": {
+            "fromState": "on",
+            "toState": "standby",
+            "webhookUrl": "https://192.168.0.100:20000/broadcast",
+            "webhookMethod": "POST",
+            "webhookContentType": "application/json",
+            "webhookRequestBody": {
+             "command": "kettle is ready",
+                "user": "public",
+                "delayInSecs": 1,
+                "relayKey": "r3pl4ac3th153x4mpl3n0nc3"
+            }
+        }        
+    }
+}
